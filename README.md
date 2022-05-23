@@ -53,16 +53,15 @@ render () {
 ## Redux Toolkit
 ```
 // store/index.ts
-```
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import thunk from 'redux-thunk';
-import counterReducer from '../features/counter/counterSlice';
+import counterReducer from '../features/counter/counterSlice'; // 举例使用，需要自行创建
 // import storage from 'redux-persist/lib/storage'; // 默认替换
 import storage from './redux-persist-taro-storage/src';
 
 const reducers = combineReducers({
-  counter: counterReducer,
+  counter: counterReducer, // 这里放各种Reducer
 });
 
 const persistConfig = {
@@ -76,6 +75,7 @@ export const store = configureStore({
   middleware: [thunk],
 });
 ```
+
 ```
 //app.tsx
 import { Provider } from 'react-redux'
