@@ -66,6 +66,7 @@ const reducers = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
+  // 可以在这里配置黑名单或白名单，见后文参考
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
